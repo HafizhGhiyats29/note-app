@@ -1,13 +1,16 @@
-import {Sequelize} from "sequelize";
+import { Sequelize } from "sequelize";
 
-const db = new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
-    host : process.env.HOST,
-    dialect : process.env.DIALECT,
-})
+const db = new Sequelize("databaseapp", "root", "", {
+  host: "localhost",
+  dialect: "mysql",
+});
 
 db.authenticate()
-.then(()=>{console.log("Database Connected")})
-.catch(()=>{console.log("Failet To Connect Database")});
-
+  .then(() => {
+    console.log("Database Connected");
+  })
+  .catch(() => {
+    console.log("Failet To Connect Database");
+  });
 
 export default db;
