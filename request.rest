@@ -1,0 +1,25 @@
+GET http://localhost:3001/todo
+
+###
+GET http://localhost:3001/todo/1
+
+###
+POST http://localhost:3001/todo
+Content-Type: application/json
+
+{
+    "name": "Aulia",
+    "description": "skdjc"
+}
+
+###
+PATCH  http://localhost:3001/todo/1
+Content-Type: application/json
+
+{
+    "name": "Setyo",
+    "description": "aku anak sehat"
+}
+
+###
+DELETE   http://localhost:3001/todo/1
