@@ -43,3 +43,17 @@ export const updateTodo = async (req, res) => {
     console.log(error.message);
   }
 };
+
+
+export const deleteTodo = async (req, res) => {
+  try {
+    await todo.destroy({
+      where:{
+        id: req.params.id
+      }
+    });
+    res.status(200).json({msg: "terhapus"});
+  } catch (error) {
+    console.log(error.message);
+  }
+};
